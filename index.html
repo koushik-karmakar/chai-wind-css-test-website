@@ -1,0 +1,1822 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://res.cloudinary.com/db7qmdfr2/image/upload/v1774027422/46b6aa9a-dd5c-4f6e-8388-77d6339a9ff6_c9srny.png"
+    />
+    <title>ChaiWindCSS — Utility CSS, Inline & Instant</title>
+    <script src="https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@main/dist/chaiwindcss.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .cb {
+        background: #0f172a;
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .cbt {
+        background: #1e293b;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+      pre {
+        padding: 28px;
+        overflow-x: auto;
+        margin: 0;
+      }
+      .cb code {
+        font-family: "Courier New", monospace;
+        font-size: 13.5px;
+        line-height: 1.9;
+        color: #cbd5e1;
+      }
+      .kw {
+        color: #fb923c;
+      }
+      .str {
+        color: #86efac;
+      }
+      .cm {
+        color: #475569;
+      }
+      .at {
+        color: #60a5fa;
+      }
+      /* inline code — NO color here, cw-color-* wins */
+      code {
+        font-family: "Courier New", monospace;
+      }
+      .sep {
+        width: 1px;
+        background: #e5e7eb;
+        align-self: stretch;
+      }
+      a,
+      button {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body class="cw-bg-white cw-color-gray-900">
+    <!-- ═══ NAVBAR ═══ -->
+    <nav
+      class="cw-flex cw-justify-between cw-items-center cw-px-12 cw-py-4 cw-bg-white cw-bb cw-b"
+    >
+      <div class="cw-flex cw-items-center cw-gap-3">
+        <img
+          height="48"
+          src="https://res.cloudinary.com/db7qmdfr2/image/upload/v1774027367/2aedc95a-9be8-4c8d-b11a-c2478c18a07a_wluwha.png"
+          alt="ChaiWindCSS"
+        />
+        <span class="cw-text-xs cw-color-gray-400">v1.0.0</span>
+      </div>
+
+      <div class="cw-flex cw-items-center cw-gap-8">
+        <a
+          class="cw-text-sm cw-fw-medium cw-color-gray-500 cw-cursor-pointer"
+          href="#features"
+          >Features</a
+        >
+        <a
+          class="cw-text-sm cw-fw-medium cw-color-gray-500 cw-cursor-pointer"
+          href="#howit"
+          >How it works</a
+        >
+        <a
+          class="cw-text-sm cw-fw-medium cw-color-gray-500 cw-cursor-pointer"
+          href="#classes"
+          >Classes</a
+        >
+        <a
+          class="cw-text-sm cw-fw-medium cw-color-gray-500 cw-cursor-pointer"
+          href="#cdn"
+          >CDN</a
+        >
+        <a
+          class="cw-text-sm cw-fw-medium cw-color-gray-500 cw-cursor-pointer"
+          href="#colors"
+          >Colors</a
+        >
+      </div>
+
+      <div class="cw-flex cw-items-center cw-gap-3">
+        <a
+          target="_blank"
+          href="https://github.com/koushik-karmakar/chaiwindcss"
+          class="cw-flex cw-items-center cw-gap-2 cw-px-4 cw-py-2 cw-rounded-lg cw-text-sm cw-fw-medium cw-color-gray-700 cw-b cw-cursor-pointer"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+            />
+          </svg>
+          GitHub
+        </a>
+        <a
+          class="cw-bg-orange-600 cw-px-5 cw-py-2 cw-rounded-lg cw-text-sm cw-fw-semibold cw-color-white cw-cursor-pointer cw-shadow-sm"
+        >
+          Get Started
+        </a>
+      </div>
+    </nav>
+
+    <!-- ═══ HERO ═══ -->
+    <section
+      class="cw-flex cw-flex-col cw-items-center cw-text-center cw-px-8 cw-bg-orange-50 cw-py-20"
+    >
+      <div
+        class="cw-flex cw-items-center cw-gap-2 cw-bg-orange-100 cw-color-orange-700 cw-px-4 cw-py-2 cw-rounded-full cw-text-sm cw-fw-semibold cw-mb-8 cw-b cw-border-color-orange-200"
+      >
+        <span
+          class="cw-bg-orange-600 cw-rounded-full"
+          style="width: 7px; height: 7px; display: inline-block"
+        ></span>
+        Zero build step · Runtime · Inline styles
+      </div>
+
+      <h1
+        class="cw-fw-black cw-color-gray-900 cw-mb-6"
+        style="
+          font-size: 62px;
+          line-height: 1.06;
+          max-width: 780px;
+          letter-spacing: -2px;
+        "
+      >
+        CSS utilities that live<br />
+        <span class="cw-color-orange-600">inside your elements</span>
+      </h1>
+
+      <p
+        class="cw-text-xl cw-leading-relaxed cw-color-gray-500 cw-mb-10"
+        style="max-width: 560px"
+      >
+        Write
+        <code
+          class="cw-bg-orange-100 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+          style="font-size: 15px"
+          >cw-p-4</code
+        >
+        and ChaiWindCSS sets
+        <code
+          class="cw-bg-orange-100 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+          style="font-size: 15px"
+          >style="padding:16px"</code
+        >
+        directly on your element. No build, no CSS file, no config.
+      </p>
+
+      <div class="cw-flex cw-items-center cw-gap-4 cw-mb-16">
+        <a
+          href="#cdn"
+          class="cw-bg-orange-600 cw-color-white cw-px-8 cw-py-4 cw-rounded-xl cw-fw-semibold cw-shadow-md cw-cursor-pointer"
+          style="font-size: 16px"
+          >Get CDN Link</a
+        >
+        <a
+          href="#howit"
+          class="cw-bg-white cw-color-gray-700 cw-px-8 cw-py-4 cw-rounded-xl cw-fw-semibold cw-b cw-shadow-sm cw-cursor-pointer"
+          style="font-size: 16px"
+          >See How it Works</a
+        >
+      </div>
+
+      <div
+        class="cb cw-w-full cw-shadow-xl"
+        style="max-width: 720px; text-align: left"
+      >
+        <div class="cbt">
+          <span class="dot" style="background: #ef4444"></span>
+          <span class="dot" style="background: #f59e0b"></span>
+          <span class="dot" style="background: #22c55e"></span>
+          <span class="cw-text-xs cw-ml-3 cw-color-gray-400 cw-fw-medium"
+            >index.html — live example</span
+          >
+        </div>
+        <pre><code><span class="cm">&lt;!-- Drop the CDN script --&gt;</span>
+<span class="kw">&lt;script</span> <span class="at">src</span>=<span class="str">"https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@1.0.0/dist/chaiwindcss.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span>
+
+<span class="cm">&lt;!-- Write cw- classes as usual --&gt;</span>
+<span class="kw">&lt;div</span> <span class="at">class</span>=<span class="str">"cw-flex cw-gap-4 cw-p-6 cw-bg-orange-600 cw-rounded-xl"</span><span class="kw">&gt;</span>
+  <span class="kw">&lt;h1</span> <span class="at">class</span>=<span class="str">"cw-text-2xl cw-fw-bold cw-color-white"</span><span class="kw">&gt;</span>Hello World<span class="kw">&lt;/h1&gt;</span>
+<span class="kw">&lt;/div&gt;</span>
+
+<span class="cm">&lt;!-- Inspect element — styles are set inline automatically ✓ --&gt;</span>
+<span class="kw">&lt;div</span> <span class="at">style</span>=<span class="str">"display:flex; gap:16px; padding:24px; background-color:#ea580c; border-radius:12px;"</span><span class="kw">&gt;</span></code></pre>
+      </div>
+    </section>
+
+    <!-- ═══ STATS ═══ -->
+    <section class="cw-flex cw-justify-center cw-bg-white cw-bt cw-bb">
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >60+</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Utility classes</span
+        >
+      </div>
+      <div class="sep"></div>
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >0</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Build steps</span
+        >
+      </div>
+      <div class="sep"></div>
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >8</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Rule categories</span
+        >
+      </div>
+      <div class="sep"></div>
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >9</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Color families</span
+        >
+      </div>
+      <div class="sep"></div>
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >19</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Shades per color</span
+        >
+      </div>
+      <div class="sep"></div>
+      <div
+        class="cw-flex cw-flex-col cw-items-center cw-gap-1 cw-py-10 cw-px-16"
+      >
+        <span
+          class="cw-fw-black cw-color-orange-600"
+          style="font-size: 40px; line-height: 1"
+          >~3kb</span
+        >
+        <span class="cw-text-sm cw-fw-medium cw-color-gray-500"
+          >Minified size</span
+        >
+      </div>
+    </section>
+
+    <!-- ═══ FEATURES ═══ -->
+    <section id="features" class="cw-py-20 cw-px-12 cw-bg-gray-50">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <div class="cw-text-center cw-mb-16">
+          <p
+            class="cw-text-sm cw-fw-bold cw-uppercase cw-tracking-4 cw-color-orange-600 cw-mb-3"
+          >
+            Why ChaiWindCSS
+          </p>
+          <h2
+            class="cw-fw-black cw-color-gray-900 cw-mb-4"
+            style="font-size: 38px; letter-spacing: -1px"
+          >
+            Everything you need. Nothing you don't.
+          </h2>
+          <p
+            class="cw-text-lg cw-color-gray-500 cw-leading-relaxed"
+            style="max-width: 520px; margin: 0 auto"
+          >
+            No config files, no PostCSS, no purge step. Drop a script tag and
+            start building.
+          </p>
+        </div>
+
+        <div class="cw-flex cw-gap-5" style="flex-wrap: wrap">
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-orange-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">⚡</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              Zero build step
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              One
+              <code
+                class="cw-bg-gray-100 cw-color-orange-700 cw-px-1 cw-rounded-md"
+                style="font-size: 13px"
+                >&lt;script&gt;</code
+              >
+              tag. Done. No CLI, no webpack, no npm install required.
+            </p>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-purple-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">🎯</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              True inline styles
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              Every class resolves to
+              <code
+                class="cw-bg-gray-100 cw-color-orange-700 cw-px-1 cw-rounded-md"
+                style="font-size: 13px"
+                >style=""</code
+              >
+              directly on the element — no stylesheet generated, ever.
+            </p>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-green-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">👁️</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              DOM-aware
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              MutationObserver watches every new node. Styles apply to React,
+              Vue, or JS-generated content automatically.
+            </p>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-teal-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">🧩</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              Fully extensible
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              Rules are plain JS objects. Add a new utility in seconds by adding
+              one function to a rules file and rebuilding.
+            </p>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-pink-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">🎨</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              Rich color palette
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              9 color families × 19 shades each (50 → 950). Every shade
+              interpolated for perceptually smooth transitions.
+            </p>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-8 cw-b cw-shadow-sm"
+            style="flex: 1; min-width: 300px"
+          >
+            <div
+              class="cw-bg-yellow-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center cw-mb-5 cw-size-13"
+            >
+              <span style="font-size: 24px">📦</span>
+            </div>
+            <h3 class="cw-fw-bold cw-text-xl cw-color-gray-900 cw-mb-3">
+              Tiny footprint
+            </h3>
+            <p class="cw-leading-relaxed cw-color-gray-500">
+              Under 3kb minified. No tree-shaking required — every rule runs
+              only when its class appears on the page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section id="howit" class="cw-py-20 cw-px-12 cw-bg-white">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <div class="cw-text-center cw-mb-16">
+          <p
+            class="cw-text-sm cw-fw-bold cw-uppercase cw-tracking-4 cw-color-orange-600 cw-mb-3"
+          >
+            Under the hood
+          </p>
+          <h2
+            class="cw-fw-black cw-color-gray-900 cw-mb-4"
+            style="font-size: 38px; letter-spacing: -1px"
+          >
+            How it works in 4 steps
+          </h2>
+          <p class="cw-text-lg cw-color-gray-500">
+            From class name to inline style in milliseconds
+          </p>
+        </div>
+
+        <div class="cw-flex cw-gap-12 cw-items-center" style="flex-wrap: wrap">
+          <div
+            class="cw-flex cw-flex-col cw-gap-10"
+            style="flex: 1; min-width: 320px"
+          >
+            <div class="cw-flex cw-gap-5 cw-items-start">
+              <div
+                class="cw-bg-orange-600 cw-color-white cw-fw-black cw-rounded-2xl cw-flex cw-items-center cw-justify-center cw-size-12"
+                style="min-width: 48px; font-size: 20px"
+              >
+                1
+              </div>
+              <div>
+                <h4 class="cw-fw-bold cw-text-lg cw-color-gray-900 cw-mb-2">
+                  Script loads, DOM scans
+                </h4>
+                <p class="cw-leading-relaxed cw-color-gray-500">
+                  On
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >DOMContentLoaded</code
+                  >, the engine queries every element that has a
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >cw-</code
+                  >
+                  class prefix.
+                </p>
+              </div>
+            </div>
+
+            <div class="cw-flex cw-gap-5 cw-items-start">
+              <div
+                class="cw-bg-orange-600 cw-color-white cw-fw-black cw-rounded-2xl cw-flex cw-items-center cw-justify-center cw-size-12"
+                style="min-width: 48px; font-size: 20px"
+              >
+                2
+              </div>
+              <div>
+                <h4 class="cw-fw-bold cw-text-lg cw-color-gray-900 cw-mb-2">
+                  Parser resolves the class
+                </h4>
+                <p class="cw-leading-relaxed cw-color-gray-500">
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >cw-bg-orange-600</code
+                  >
+                  splits to key
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >bg</code
+                  >
+                  and args
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >orange, 600</code
+                  >. The longest key match wins.
+                </p>
+              </div>
+            </div>
+
+            <div class="cw-flex cw-gap-5 cw-items-start">
+              <div
+                class="cw-bg-orange-600 cw-color-white cw-fw-black cw-rounded-2xl cw-flex cw-items-center cw-justify-center cw-size-12"
+                style="min-width: 48px; font-size: 20px"
+              >
+                3
+              </div>
+              <div>
+                <h4 class="cw-fw-bold cw-text-lg cw-color-gray-900 cw-mb-2">
+                  Rule function runs
+                </h4>
+                <p class="cw-leading-relaxed cw-color-gray-500">
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >rules["bg"]("orange","600")</code
+                  >
+                  looks up the palette and returns
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >&#123; backgroundColor: "#ea580c" &#125;</code
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <div class="cw-flex cw-gap-5 cw-items-start">
+              <div
+                class="cw-bg-orange-600 cw-color-white cw-fw-black cw-rounded-2xl cw-flex cw-items-center cw-justify-center cw-size-12"
+                style="min-width: 48px; font-size: 20px"
+              >
+                4
+              </div>
+              <div>
+                <h4 class="cw-fw-bold cw-text-lg cw-color-gray-900 cw-mb-2">
+                  Applied directly inline
+                </h4>
+                <p class="cw-leading-relaxed cw-color-gray-500">
+                  All resolved styles merge and set via
+                  <code
+                    class="cw-bg-orange-50 cw-color-orange-700 cw-px-2 cw-py-1 cw-rounded-md"
+                    style="font-size: 13px"
+                    >Object.assign(el.style, styles)</code
+                  >. No stylesheet. No class injection.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 340px">
+            <div class="cb cw-shadow-xl">
+              <div class="cbt">
+                <span class="dot" style="background: #ef4444"></span>
+                <span class="dot" style="background: #f59e0b"></span>
+                <span class="dot" style="background: #22c55e"></span>
+                <span class="cw-text-xs cw-ml-3 cw-color-gray-400 cw-fw-medium"
+                  >engine.js — parseClass()</span
+                >
+              </div>
+              <pre><code><span class="cm">// "cw-bg-orange-600"</span>
+
+raw   = <span class="str">"bg-orange-600"</span>
+parts = [<span class="str">"bg"</span>, <span class="str">"orange"</span>, <span class="str">"600"</span>]
+
+<span class="cm">// longest key match first</span>
+key  = <span class="str">"bg"</span>    <span class="cm">// ✓ rules["bg"] exists</span>
+rest = [<span class="str">"orange"</span>, <span class="str">"600"</span>]
+
+<span class="cm">// call rule with args</span>
+rules[<span class="str">"bg"</span>](<span class="str">"orange"</span>, <span class="str">"600"</span>)
+<span class="cm">// → resolveColor("orange", "600")</span>
+<span class="cm">// → "#ea580c"</span>
+
+<span class="cm">// set inline</span>
+el.style.backgroundColor = <span class="str">"#ea580c"</span> <span class="kw">✓</span>
+
+<span class="cm">// result in HTML</span>
+<span class="kw">&lt;div</span> <span class="at">style</span>=<span class="str">"background-color:#ea580c"</span><span class="kw">&gt;</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CLASS CATEGORIES ═══ -->
+    <section id="classes" class="cw-py-20 cw-px-12 cw-bg-gray-50">
+      <div style="max-width: 1100px; margin: 0 auto">
+        <div class="cw-text-center cw-mb-16">
+          <p
+            class="cw-text-sm cw-fw-bold cw-uppercase cw-tracking-4 cw-color-orange-600 cw-mb-3"
+          >
+            Reference
+          </p>
+          <h2
+            class="cw-fw-black cw-color-gray-900 cw-mb-4"
+            style="font-size: 38px; letter-spacing: -1px"
+          >
+            8 utility categories
+          </h2>
+          <p class="cw-text-lg cw-color-gray-500">
+            Every class you need to build a complete landing page
+          </p>
+        </div>
+
+        <div class="cw-flex cw-gap-3" style="flex-wrap: wrap">
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-orange-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">📐</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Spacing</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-orange-50 cw-color-orange-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-p-{n}</code
+              >
+              <code
+                class="cw-bg-orange-50 cw-color-orange-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-px-{n} / cw-py-{n}</code
+              >
+              <code
+                class="cw-bg-orange-50 cw-color-orange-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-m-{n} / cw-mx-{n}</code
+              >
+              <code
+                class="cw-bg-orange-50 cw-color-orange-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-gap-{n}</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-purple-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">✍️</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Typography</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-purple-100 cw-color-purple-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-text-{xs|sm|lg|xl...}</code
+              >
+              <code
+                class="cw-bg-purple-100 cw-color-purple-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-fw-{bold|semibold...}</code
+              >
+              <code
+                class="cw-bg-purple-100 cw-color-purple-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-leading-{relaxed...}</code
+              >
+              <code
+                class="cw-bg-purple-100 cw-color-purple-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-uppercase / cw-truncate</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-teal-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">🎨</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Colors</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-teal-100 cw-color-teal-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-bg-{color}-{shade}</code
+              >
+              <code
+                class="cw-bg-teal-100 cw-color-teal-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-color-{color}-{shade}</code
+              >
+              <code
+                class="cw-bg-teal-100 cw-color-teal-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-border-color-orange-500</code
+              >
+              <code
+                class="cw-bg-teal-100 cw-color-teal-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >50 → 150 → 250 → ... → 950</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-green-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">🔲</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Layout</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-green-100 cw-color-green-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-flex / cw-grid / cw-block</code
+              >
+              <code
+                class="cw-bg-green-100 cw-color-green-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-flex-col / cw-flex-row</code
+              >
+              <code
+                class="cw-bg-green-100 cw-color-green-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-justify-between</code
+              >
+              <code
+                class="cw-bg-green-100 cw-color-green-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-items-center</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-pink-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">📏</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Sizing</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-pink-100 cw-color-pink-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-w-{n|full|auto}</code
+              >
+              <code
+                class="cw-bg-pink-100 cw-color-pink-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-h-{n|full}</code
+              >
+              <code
+                class="cw-bg-pink-100 cw-color-pink-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-max-w-{n}</code
+              >
+              <code
+                class="cw-bg-pink-100 cw-color-pink-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-size-{n}</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-yellow-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">🔳</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Borders</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-yellow-100 cw-color-yellow-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-b / cw-bt / cw-bb</code
+              >
+              <code
+                class="cw-bg-yellow-100 cw-color-yellow-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-rounded-{md|lg|xl|full}</code
+              >
+              <code
+                class="cw-bg-yellow-100 cw-color-yellow-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-bw-{n}</code
+              >
+              <code
+                class="cw-bg-yellow-100 cw-color-yellow-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-ring-{n}</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-red-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">✨</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Effects</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-red-100 cw-color-red-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-shadow-{sm|md|lg|xl}</code
+              >
+              <code
+                class="cw-bg-red-100 cw-color-red-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-opacity-{0-100}</code
+              >
+              <code
+                class="cw-bg-red-100 cw-color-red-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-cursor-pointer</code
+              >
+              <code
+                class="cw-bg-red-100 cw-color-red-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-transition</code
+              >
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-white cw-rounded-2xl cw-p-6 cw-b cw-shadow-sm cw-overflow-hidden"
+            style="flex: 1; min-width: 230px"
+          >
+            <div class="cw-flex cw-items-center cw-gap-3 cw-mb-5">
+              <div
+                class="cw-bg-gray-100 cw-rounded-xl cw-flex cw-items-center cw-justify-center"
+                style="width: 38px; height: 38px"
+              >
+                <span style="font-size: 18px">📍</span>
+              </div>
+              <h4 class="cw-fw-bold cw-color-gray-900">Position</h4>
+            </div>
+            <div class="cw-flex cw-flex-col cw-gap-2">
+              <code
+                class="cw-bg-gray-100 cw-color-gray-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-relative / cw-absolute</code
+              >
+              <code
+                class="cw-bg-gray-100 cw-color-gray-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-top-{n} / cw-left-{n}</code
+              >
+              <code
+                class="cw-bg-gray-100 cw-color-gray-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-z-{n}</code
+              >
+              <code
+                class="cw-bg-gray-100 cw-color-gray-700 cw-px-3 cw-py-2 cw-rounded-lg cw-text-sm"
+                style="display: block"
+                >cw-inset-{n}</code
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COLOR PALETTE ═══ -->
+    <section id="colors" class="cw-py-20 cw-px-12 cw-bg-white">
+      <div style="max-width: 100%; margin: 0 auto">
+        <div class="cw-text-center cw-mb-16">
+          <p
+            class="cw-text-sm cw-fw-bold cw-uppercase cw-tracking-4 cw-color-orange-600 cw-mb-3"
+          >
+            Color system
+          </p>
+          <h2
+            class="cw-fw-black cw-color-gray-900 cw-mb-4"
+            style="font-size: 38px; letter-spacing: -1px"
+          >
+            9 families · 19 shades each
+          </h2>
+          <p class="cw-text-lg cw-color-gray-500">
+            50, 100, 150, 200, 250 ... all the way to 950 — finer granularity
+            than Tailwind
+          </p>
+        </div>
+
+        <!-- Orange — featured full scale -->
+        <div class="cw-mb-8">
+          <p
+            class="cw-text-sm cw-fw-bold cw-color-orange-600 cw-mb-3 cw-uppercase cw-tracking-2"
+          >
+            Orange — all 19 shades
+          </p>
+          <div class="cw-flex cw-gap-1" style="flex-wrap: nowrap">
+            <div
+              class="cw-bg-orange-50 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-700 cw-text-xs cw-fw-bold">50</span>
+            </div>
+            <div
+              class="cw-bg-orange-100 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-700 cw-text-xs cw-fw-bold">100</span>
+            </div>
+            <div
+              class="cw-bg-orange-150 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-700 cw-text-xs cw-fw-bold">150</span>
+            </div>
+            <div
+              class="cw-bg-orange-200 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-700 cw-text-xs cw-fw-bold">200</span>
+            </div>
+            <div
+              class="cw-bg-orange-250 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-700 cw-text-xs cw-fw-bold">250</span>
+            </div>
+            <div
+              class="cw-bg-orange-300 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-orange-800 cw-text-xs cw-fw-bold">300</span>
+            </div>
+            <div
+              class="cw-bg-orange-350 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">350</span>
+            </div>
+            <div
+              class="cw-bg-orange-400 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">400</span>
+            </div>
+            <div
+              class="cw-bg-orange-450 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">450</span>
+            </div>
+            <div
+              class="cw-bg-orange-500 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">500</span>
+            </div>
+            <div
+              class="cw-bg-orange-550 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">550</span>
+            </div>
+            <div
+              class="cw-bg-orange-600 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">600</span>
+            </div>
+            <div
+              class="cw-bg-orange-650 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">650</span>
+            </div>
+            <div
+              class="cw-bg-orange-700 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">700</span>
+            </div>
+            <div
+              class="cw-bg-orange-750 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">750</span>
+            </div>
+            <div
+              class="cw-bg-orange-800 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">800</span>
+            </div>
+            <div
+              class="cw-bg-orange-850 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">850</span>
+            </div>
+            <div
+              class="cw-bg-orange-900 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">900</span>
+            </div>
+            <div
+              class="cw-bg-orange-950 cw-rounded-lg cw-flex cw-flex-col cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">950</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue full scale -->
+        <div class="cw-mb-8">
+          <p
+            class="cw-text-sm cw-fw-semibold cw-color-gray-500 cw-mb-3 cw-uppercase cw-tracking-2"
+          >
+            Blue
+          </p>
+          <div class="cw-flex cw-gap-1" style="flex-wrap: nowrap">
+            <div
+              class="cw-bg-blue-50 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-700 cw-text-xs cw-fw-bold">50</span>
+            </div>
+            <div
+              class="cw-bg-blue-100 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-700 cw-text-xs cw-fw-bold">100</span>
+            </div>
+            <div
+              class="cw-bg-blue-150 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-700 cw-text-xs cw-fw-bold">150</span>
+            </div>
+            <div
+              class="cw-bg-blue-200 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-700 cw-text-xs cw-fw-bold">200</span>
+            </div>
+            <div
+              class="cw-bg-blue-250 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-700 cw-text-xs cw-fw-bold">250</span>
+            </div>
+            <div
+              class="cw-bg-blue-300 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-blue-800 cw-text-xs cw-fw-bold">300</span>
+            </div>
+            <div
+              class="cw-bg-blue-350 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">350</span>
+            </div>
+            <div
+              class="cw-bg-blue-400 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">400</span>
+            </div>
+            <div
+              class="cw-bg-blue-450 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">450</span>
+            </div>
+            <div
+              class="cw-bg-blue-500 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">500</span>
+            </div>
+            <div
+              class="cw-bg-blue-550 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">550</span>
+            </div>
+            <div
+              class="cw-bg-blue-600 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">600</span>
+            </div>
+            <div
+              class="cw-bg-blue-650 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">650</span>
+            </div>
+            <div
+              class="cw-bg-blue-700 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">700</span>
+            </div>
+            <div
+              class="cw-bg-blue-750 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">750</span>
+            </div>
+            <div
+              class="cw-bg-blue-800 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">800</span>
+            </div>
+            <div
+              class="cw-bg-blue-850 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">850</span>
+            </div>
+            <div
+              class="cw-bg-blue-900 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">900</span>
+            </div>
+            <div
+              class="cw-bg-blue-950 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">950</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gray full scale -->
+        <div class="cw-mb-10">
+          <p
+            class="cw-text-sm cw-fw-semibold cw-color-gray-500 cw-mb-3 cw-uppercase cw-tracking-2"
+          >
+            Gray
+          </p>
+          <div class="cw-flex cw-gap-1" style="flex-wrap: nowrap">
+            <div
+              class="cw-bg-gray-50 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11 cw-b"
+            >
+              <span class="cw-color-gray-600 cw-text-xs cw-fw-bold">50</span>
+            </div>
+            <div
+              class="cw-bg-gray-100 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-gray-700 cw-text-xs cw-fw-bold">100</span>
+            </div>
+            <div
+              class="cw-bg-gray-150 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-gray-700 cw-text-xs cw-fw-bold">150</span>
+            </div>
+            <div
+              class="cw-bg-gray-200 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-gray-700 cw-text-xs cw-fw-bold">200</span>
+            </div>
+            <div
+              class="cw-bg-gray-250 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-gray-800 cw-text-xs cw-fw-bold">250</span>
+            </div>
+            <div
+              class="cw-bg-gray-300 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-gray-800 cw-text-xs cw-fw-bold">300</span>
+            </div>
+            <div
+              class="cw-bg-gray-350 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">350</span>
+            </div>
+            <div
+              class="cw-bg-gray-400 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">400</span>
+            </div>
+            <div
+              class="cw-bg-gray-450 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">450</span>
+            </div>
+            <div
+              class="cw-bg-gray-500 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">500</span>
+            </div>
+            <div
+              class="cw-bg-gray-550 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">550</span>
+            </div>
+            <div
+              class="cw-bg-gray-600 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">600</span>
+            </div>
+            <div
+              class="cw-bg-gray-650 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">650</span>
+            </div>
+            <div
+              class="cw-bg-gray-700 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">700</span>
+            </div>
+            <div
+              class="cw-bg-gray-750 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">750</span>
+            </div>
+            <div
+              class="cw-bg-gray-800 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">800</span>
+            </div>
+            <div
+              class="cw-bg-gray-850 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">850</span>
+            </div>
+            <div
+              class="cw-bg-gray-900 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">900</span>
+            </div>
+            <div
+              class="cw-bg-gray-950 cw-rounded-lg cw-flex cw-items-center cw-justify-center cw-h-14 cw-flex-1 cw-min-w-11"
+            >
+              <span class="cw-color-white cw-text-xs cw-fw-bold">950</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other colors — compact 19 swatches each -->
+        <div class="cw-flex cw-gap-5" style="flex-wrap: wrap">
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-green-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Green
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-green-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-100 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-150 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-200 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-250 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-300 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-350 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-400 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-450 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-500 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-550 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-600 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-650 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-700 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-750 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-800 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-850 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-900 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-green-950 cw-rounded-md cw-h-8 cw-flex-1"></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-purple-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Purple
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-purple-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div
+                class="cw-bg-purple-100 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-150 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-200 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-250 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-300 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-350 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-400 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-450 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-500 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-550 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-600 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-650 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-700 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-750 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-800 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-850 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-900 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-purple-950 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-red-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Red
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-red-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-100 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-150 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-200 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-250 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-300 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-350 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-400 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-450 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-500 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-550 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-600 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-650 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-700 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-750 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-800 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-850 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-900 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-red-950 cw-rounded-md cw-h-8 cw-flex-1"></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-teal-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Teal
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-teal-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-100 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-150 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-200 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-250 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-300 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-350 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-400 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-450 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-500 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-550 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-600 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-650 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-700 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-750 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-800 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-850 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-900 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-teal-950 cw-rounded-md cw-h-8 cw-flex-1"></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-pink-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Pink
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-pink-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-100 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-150 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-200 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-250 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-300 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-350 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-400 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-450 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-500 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-550 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-600 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-650 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-700 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-750 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-800 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-850 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-900 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div class="cw-bg-pink-950 cw-rounded-md cw-h-8 cw-flex-1"></div>
+            </div>
+          </div>
+
+          <div style="flex: 1; min-width: 200px">
+            <p
+              class="cw-text-xs cw-fw-bold cw-color-yellow-700 cw-mb-2 cw-uppercase cw-tracking-2"
+            >
+              Yellow
+            </p>
+            <div class="cw-flex cw-gap-1">
+              <div class="cw-bg-yellow-50 cw-rounded-md cw-h-8 cw-flex-1"></div>
+              <div
+                class="cw-bg-yellow-100 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-150 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-200 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-250 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-300 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-350 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-400 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-450 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-500 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-550 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-600 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-650 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-700 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-750 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-800 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-850 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-900 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+              <div
+                class="cw-bg-yellow-950 cw-rounded-md cw-h-8 cw-flex-1"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CDN ═══ -->
+    <section id="cdn" class="cw-py-20 cw-px-12 cw-bg-gray-950">
+      <div style="max-width: 800px; margin: 0 auto">
+        <div class="cw-text-center cw-mb-14">
+          <p
+            class="cw-text-sm cw-fw-bold cw-uppercase cw-tracking-4 cw-color-orange-400 cw-mb-3"
+          >
+            Get started in 10 seconds
+          </p>
+          <h2
+            class="cw-fw-black cw-color-gray-50 cw-mb-4"
+            style="font-size: 38px; letter-spacing: -1px"
+          >
+            Add it to any project
+          </h2>
+          <p class="cw-text-lg cw-color-gray-400 cw-leading-relaxed">
+            One script tag is all it takes. No npm, no config, no build
+            pipeline.
+          </p>
+        </div>
+
+        <div class="cw-flex cw-flex-col cw-gap-5 cw-mb-10">
+          <div
+            class="cw-bg-gray-900 cw-rounded-2xl cw-p-5 cw-b"
+            style="border-color: #1e293b"
+          >
+            <div class="cw-flex cw-items-center cw-justify-between cw-mb-3">
+              <div class="cw-flex cw-items-center cw-gap-3">
+                <div
+                  class="cw-bg-green-500 cw-rounded-full"
+                  style="width: 9px; height: 9px"
+                ></div>
+                <span class="cw-fw-semibold cw-color-gray-100 cw-text-sm"
+                  >Stable — v1.0.0 (Recommended)</span
+                >
+              </div>
+              <span
+                class="cw-bg-green-500 cw-color-white cw-text-xs cw-fw-bold cw-px-3 cw-py-1 cw-rounded-full"
+                >Production</span
+              >
+            </div>
+            <div class="cb" style="border-radius: 10px">
+              <pre
+                style="padding: 16px 20px"
+              ><code class="cw-color-gray-300" style="font-size:13px;">https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@1.0.0/dist/chaiwindcss.min.js</code></pre>
+            </div>
+          </div>
+
+          <div
+            class="cw-bg-gray-900 cw-rounded-2xl cw-p-5 cw-b"
+            style="border-color: #1e293b"
+          >
+            <div class="cw-flex cw-items-center cw-justify-between cw-mb-3">
+              <div class="cw-flex cw-items-center cw-gap-3">
+                <div
+                  class="cw-bg-orange-500 cw-rounded-full"
+                  style="width: 9px; height: 9px"
+                ></div>
+                <span class="cw-fw-semibold cw-color-gray-100 cw-text-sm"
+                  >Latest — always @main</span
+                >
+              </div>
+              <span
+                class="cw-bg-orange-600 cw-color-white cw-text-xs cw-fw-bold cw-px-3 cw-py-1 cw-rounded-full"
+                >Development</span
+              >
+            </div>
+            <div class="cb" style="border-radius: 10px">
+              <pre
+                style="padding: 16px 20px"
+              ><code class="cw-color-gray-300" style="font-size:13px;">https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@main/dist/chaiwindcss.min.js</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="cb cw-shadow-xl">
+          <div class="cbt">
+            <span class="dot" style="background: #ef4444"></span>
+            <span class="dot" style="background: #f59e0b"></span>
+            <span class="dot" style="background: #22c55e"></span>
+            <span class="cw-text-xs cw-ml-3 cw-color-gray-400 cw-fw-medium"
+              >Full working example</span
+            >
+          </div>
+          <pre><code><span class="kw">&lt;!DOCTYPE html&gt;</span>
+<span class="kw">&lt;html&gt;&lt;head&gt;</span>
+  <span class="kw">&lt;script</span> <span class="at">src</span>=<span class="str">"https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@1.0.0/dist/chaiwindcss.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span>
+<span class="kw">&lt;/head&gt;&lt;body&gt;</span>
+
+  <span class="kw">&lt;nav</span> <span class="at">class</span>=<span class="str">"cw-flex cw-justify-between cw-items-center cw-px-8 cw-py-4 cw-bg-gray-900"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;span</span> <span class="at">class</span>=<span class="str">"cw-fw-bold cw-text-xl cw-color-white"</span><span class="kw">&gt;</span>MyApp<span class="kw">&lt;/span&gt;</span>
+    <span class="kw">&lt;button</span> <span class="at">class</span>=<span class="str">"cw-bg-orange-600 cw-color-white cw-px-4 cw-py-2 cw-rounded-lg cw-fw-medium cw-cursor-pointer"</span><span class="kw">&gt;</span>
+      Get Started
+    <span class="kw">&lt;/button&gt;</span>
+  <span class="kw">&lt;/nav&gt;</span>
+
+  <span class="kw">&lt;section</span> <span class="at">class</span>=<span class="str">"cw-flex cw-flex-col cw-items-center cw-py-20 cw-bg-orange-50 cw-text-center"</span><span class="kw">&gt;</span>
+    <span class="kw">&lt;h1</span> <span class="at">class</span>=<span class="str">"cw-text-5xl cw-fw-black cw-color-gray-900 cw-mb-4"</span><span class="kw">&gt;</span>Hello World<span class="kw">&lt;/h1&gt;</span>
+    <span class="kw">&lt;p</span> <span class="at">class</span>=<span class="str">"cw-text-lg cw-color-gray-500 cw-leading-relaxed"</span><span class="kw">&gt;</span>Built with ChaiWindCSS<span class="kw">&lt;/p&gt;</span>
+  <span class="kw">&lt;/section&gt;</span>
+
+<span class="kw">&lt;/body&gt;&lt;/html&gt;</span></code></pre>
+        </div>
+
+        <div
+          class="cw-bg-gray-900 cw-rounded-2xl cw-p-6 cw-mt-6 cw-b"
+          style="border-color: #1e293b"
+        >
+          <p
+            class="cw-fw-semibold cw-color-gray-300 cw-mb-4 cw-text-sm cw-uppercase cw-tracking-4"
+          >
+            Auto-injected into every page on load
+          </p>
+          <div class="cw-flex cw-flex-col cw-gap-3">
+            <div class="cw-flex cw-items-center cw-gap-3">
+              <span
+                class="cw-bg-green-500 cw-rounded-full"
+                style="
+                  width: 8px;
+                  height: 8px;
+                  min-width: 8px;
+                  display: inline-block;
+                "
+              ></span>
+              <code
+                class="cw-color-green-400"
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                "
+                >* &#123; margin:0; padding:0; box-sizing:border-box
+                &#125;</code
+              >
+            </div>
+            <div class="cw-flex cw-items-center cw-gap-3">
+              <span
+                class="cw-bg-green-500 cw-rounded-full"
+                style="
+                  width: 8px;
+                  height: 8px;
+                  min-width: 8px;
+                  display: inline-block;
+                "
+              ></span>
+              <code
+                class="cw-color-green-400"
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                "
+                >html &#123; scroll-behavior: smooth &#125;</code
+              >
+            </div>
+            <div class="cw-flex cw-items-center cw-gap-3">
+              <span
+                class="cw-bg-green-500 cw-rounded-full"
+                style="
+                  width: 8px;
+                  height: 8px;
+                  min-width: 8px;
+                  display: inline-block;
+                "
+              ></span>
+              <code
+                class="cw-color-green-400"
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                "
+                >a &#123; text-decoration: none &#125;</code
+              >
+            </div>
+            <div class="cw-flex cw-items-center cw-gap-3">
+              <span
+                class="cw-bg-green-500 cw-rounded-full"
+                style="
+                  width: 8px;
+                  height: 8px;
+                  min-width: 8px;
+                  display: inline-block;
+                "
+              ></span>
+              <code
+                class="cw-color-green-400"
+                style="
+                  font-family: &quot;Courier New&quot;, monospace;
+                  font-size: 13px;
+                "
+                >img &#123; max-width:100%; display:block &#125;</code
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="cw-flex cw-gap-4 cw-justify-center cw-mt-10">
+          <a
+            href="https://github.com/koushik-karmakar/chaiwindcss"
+            target="_blank"
+            class="cw-bg-orange-600 cw-color-white cw-px-8 cw-py-4 cw-rounded-xl cw-fw-semibold cw-cursor-pointer cw-shadow-lg"
+            style="font-size: 16px"
+            >View on GitHub</a
+          >
+          <a
+            href="https://github.com/koushik-karmakar/chaiwindcss#readme"
+            target="_blank"
+            class="cw-color-gray-300 cw-px-8 cw-py-4 cw-rounded-xl cw-fw-semibold cw-b cw-cursor-pointer"
+            style="font-size: 16px; border-color: #334155"
+            >Read the docs</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer
+      class="cw-py-10 cw-px-12 cw-bg-gray-950 cw-bt"
+      style="border-color: #1e293b"
+    >
+      <div
+        class="cw-flex cw-justify-between cw-items-center"
+        style="max-width: 1100px; margin: 0 auto; flex-wrap: wrap; gap: 20px"
+      >
+        <div class="cw-flex cw-items-center cw-gap-3">
+          <div
+           
+          >
+            <img
+              height="48"
+              src="https://res.cloudinary.com/db7qmdfr2/image/upload/v1774027367/2aedc95a-9be8-4c8d-b11a-c2478c18a07a_wluwha.png"
+              alt="ChaiWindCSS"
+            />
+          </div>
+          <div>
+            <div class="cw-fw-bold cw-color-gray-50 cw-text-sm">
+              ChaiWindCSS
+            </div>
+            <div class="cw-text-xs cw-color-gray-500">
+              Runtime utility CSS library
+            </div>
+          </div>
+        </div>
+
+        <p class="cw-text-sm cw-color-gray-600">
+          Every style on this page is set as
+          <code
+            class="cw-color-gray-400"
+            style="
+              font-family: &quot;Courier New&quot;, monospace;
+              font-size: 12px;
+            "
+            >style=""</code
+          >
+          — no external CSS file
+        </p>
+
+        <div class="cw-flex cw-gap-6">
+          <a
+            target="_blank"
+            href="https://github.com/koushik-karmakar/chaiwindcss"
+            class="cw-text-sm cw-color-gray-500 cw-cursor-pointer"
+            >GitHub</a
+          >
+          <a
+            target="_blank"
+            href="https://github.com/koushik-karmakar/chaiwindcss#readme"
+            class="cw-text-sm cw-color-gray-500 cw-cursor-pointer"
+            >Docs</a
+          >
+          <a
+            target="_blank"
+            href="https://github.com/koushik-karmakar/chaiwindcss/blob/main/LICENSE"
+            class="cw-text-sm cw-color-gray-500 cw-cursor-pointer"
+            >MIT License</a
+          >
+          <a
+            target="_blank"
+            href="https://cdn.jsdelivr.net/gh/koushik-karmakar/chaiwindcss@main/dist/chaiwindcss.min.js"
+            class="cw-text-sm cw-color-orange-500 cw-cursor-pointer"
+            >CDN Link</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
